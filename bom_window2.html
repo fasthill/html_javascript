@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window2</title>
+</head>
+<style>li {padding:10px; list-style: none}</style>
+<body>
+<!-- 윈도우 생성 및 생성된 window위에서 실시간 동작 연결 -->
+<input type="button" value="open" onclick="winopen();" />
+<input type="text" onkeypress="winmessage(this.value)" />
+<input type="button" value="close" onclick="winclose()" />
+<script>
+    function winopen(){
+        win = window.open('demo2.html', 'ot', 'width=300px, height=500px');
+        <!--selenium에서 driver 객체 생성과 동일한 개념으로 생각하면 됨. driver == win -->
+    }
+    function winmessage(msg){
+        win.document.getElementById('message').innerText=msg;
+    }
+    function winclose(){
+        win.close();
+    }
+</script>
+</body>
+</html>
