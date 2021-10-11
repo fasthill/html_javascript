@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!-- <span>앞에 공백이 없음 따라서 .firstChild는 <span></span>-->
+<p id="target1"><span>Hello world</span></p>
+<!-- <span>앞에 공백이 있음 따라서 .firstChild는 공백. secondCHild는 <span></span>-->
+<p id="target2">
+    <span>Hello Korea!</span>
+</p>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script>
+    var t1 = document.getElementById('target1').firstChild;
+    var t2 = document.getElementById('target2').firstChild;
+
+    console.log(t1.firstChild.nodeValue);
+    try{
+        console.log(t2.firstChild.nodeValue);
+    } catch(e){
+        console.log(e);
+    }
+    console.log(t2.nextSibling.firstChild.nodeValue);
+
+</script>
+</body>
+</html>
